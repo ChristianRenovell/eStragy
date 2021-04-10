@@ -29,4 +29,28 @@ export class TableComponent implements OnInit {
     });
   }
 
+  orderByCountries () {
+    this.countries.sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  orderByCapitals() {
+    this.countries.sort(function (a, b) {
+      if (a.capital > b.capital) {
+        return 1;
+      }
+      if (a.capital < b.capital) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+  
 }
