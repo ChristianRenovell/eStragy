@@ -1,1 +1,17 @@
-<p>table works!</p>
+<div>
+    <button (click)="getCountries()">Get Countries</button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Country</th>
+            <th scope="col">Capital</th> 
+          </tr>
+        </thead>
+        <tbody *ngFor="let country of countries">
+          <tr>
+            <td>{{country.name}}</td>
+            <td>{{country.capital}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
