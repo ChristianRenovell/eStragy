@@ -8,7 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { TableComponent } from './components/table/table.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { GetDataService } from './services/get-data.service';
+import { GetDataService } from './services/getData/data.service';
+
 
 @NgModule({
   declarations: [

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscriber } from 'rxjs';
-import { GetDataService } from '../../services/get-data.service';
+import { GetDataService } from '../../services/getData/data.service';
 import { Countries } from '../../interfaces/Countries';
 
 @Component({
@@ -10,26 +9,27 @@ import { Countries } from '../../interfaces/Countries';
 })
 export class TableComponent implements OnInit {
 
-  countries: Array<Countries> = [];
+  countries: Countries[] = [];
+  randonIndex : number=0;
 
   constructor(private getDataService: GetDataService) {
+  }
+  ngOnInit(): void {
     this.getCountries()
   }
-
-  ngOnInit(): void {
-
-  }
-
   getCountries() {
-    this.countries= [];
+    this.countries = [];
+   
     this.getDataService.getData().subscribe(data => {
-      for (let n = 0; n < 10; n++) {
-        this.countries.push(data[Math.floor(Math.random() * data.length)])
+      for (let n = 0; n < 10; n++) {      
+        this.randonIndex = Math.floor(Math.random() * data.length);
+        this.countries.push(data[this.randonIndex]);       
+        this.getDataService.saveCountriesName(data[this.randonIndex].name,data[this.randonIndex].capital)
       }
     });
   }
 
-  orderByCountries () {
+  orderByCountries() {
     this.countries.sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
@@ -52,5 +52,5 @@ export class TableComponent implements OnInit {
       return 0;
     });
   }
-  
+
 }
