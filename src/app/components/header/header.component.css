@@ -12,6 +12,8 @@
     font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
     font-size: 1.2em;
     text-decoration: none;
+    float: right;
+    
 }
 .nav-main a:hover{
     color: rgb(202, 202, 202);
