@@ -23,6 +23,8 @@ import { GetDataService } from './services/get-data.service';
     HttpClientModule
   ],
   providers: [GetDataService],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    TableComponent]
   })
 export class AppModule { }
