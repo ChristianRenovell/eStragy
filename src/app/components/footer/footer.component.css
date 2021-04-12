@@ -2,6 +2,11 @@ footer {
     position: absolute;
     bottom: 0px;
     width: 100%;
+    background-color: #23282E;
+    color: rgb(255, 255, 255);
+}
+footer a{
+  color: #E59135;
 }
 @media (max-width: 1000px) {
     footer {

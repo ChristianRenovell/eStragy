@@ -1,0 +1,19 @@
+.table-component {
+    background-color: #41474D;
+}
+.table-component button {
+    color: rgb(255, 255, 255);
+    background-color: #E59135;
+}
+.table-component button:hover {
+    color: rgb(255, 255, 255);
+    background-color: #E59135;
+}
+.table-component th {
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+}
+.table-component td {
+    width: 50%;
+    color: rgb(255, 255, 255);
+}

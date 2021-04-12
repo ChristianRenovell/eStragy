@@ -1,0 +1,11 @@
+
+{
+    "/savecountries": {
+      "target": "http://localhost:2000",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/savecountries": ""
+      }
+    }
+  }

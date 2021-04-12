@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 import { Countries } from '../../interfaces/Countries';
 
@@ -12,16 +13,19 @@ export class GetDataService {
   }
 
   getData() {
-    let countries = this.http.get<Countries[]>("https://restcountries.eu/rest/v2/all?fields=name;capital");
+    let countries = this.http.get<Countries[]>(environment.apiCountries);
     return countries
   }
-  saveCountriesName(countries: string, capitals: string): void {
-    var myHeaders = new Headers();
+  saveCountriesName(countries: string, capitals: string) {
+
+    /*var myHeaders = new Headers();
+    myHeaders.append("name", countries);
+    myHeaders.append("capital", capitals);
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
     var urlencoded = new URLSearchParams();
-    urlencoded.append("name", "costarica");
-    urlencoded.append("capital", "arizona");
+    urlencoded.append("name", countries);
+    urlencoded.append("capital", capitals);
 
     var requestOptions: object = {
       method: 'POST',
@@ -29,10 +33,11 @@ export class GetDataService {
       body: urlencoded,
       redirect: 'follow'
     };
-
-    fetch("http://localhost/estragy/savecountris.php", requestOptions)
+    //Server Node.js environment.apiServerDB
+    fetch(environment.apiServerDBPHP, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+      .catch(error => console.log('error', error));*/
   }
+  
 }
