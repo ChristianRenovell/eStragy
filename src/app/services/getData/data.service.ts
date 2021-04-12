@@ -18,7 +18,7 @@ export class GetDataService {
   }
   saveCountriesName(countries: string, capitals: string) {
 
-    /*var myHeaders = new Headers();
+    var myHeaders = new Headers();
     myHeaders.append("name", countries);
     myHeaders.append("capital", capitals);
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -37,7 +37,7 @@ export class GetDataService {
     fetch(environment.apiServerDBPHP, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
-      .catch(error => console.log('error', error));*/
+      .catch(error => console.log('error', error));
   }
   
 }

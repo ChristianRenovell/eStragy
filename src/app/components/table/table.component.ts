@@ -23,9 +23,14 @@ export class TableComponent implements OnInit {
       for (let n = 0; n < 10; n++) {      
         this.randonIndex = Math.floor(Math.random() * data.length);   
         this.countries.push(data[this.randonIndex]);       
-        this.getDataService.saveCountriesName(data[this.randonIndex].name,data[this.randonIndex].capital)
       }
     });
+  }
+  
+  saveCounties(){
+    this.countries.map(country => {
+      this.getDataService.saveCountriesName(country.name,country.capital)
+    })
   }
 
   orderByCountries() {

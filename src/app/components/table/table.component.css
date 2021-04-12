@@ -10,6 +10,9 @@
     color: rgb(255, 255, 255);
     background-color: #E59135;
 }
+.btn-save {
+    width: 130px;
+}
 .table-component th {
     font-size: 1.1em;
     color: rgb(255, 255, 255);
