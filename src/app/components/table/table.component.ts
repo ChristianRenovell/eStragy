@@ -28,9 +28,7 @@ export class TableComponent implements OnInit {
   }
   
   saveCounties(){
-    this.countries.map(country => {
-      this.getDataService.saveCountriesName(country.name,country.capital)
-    })
+    this.getDataService.saveCountriesName(this.countries)
   }
 
   orderByCountries() {

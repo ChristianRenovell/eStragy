@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 
 import { Countries } from '../../interfaces/Countries';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,16 +17,21 @@ export class GetDataService {
     let countries = this.http.get<Countries[]>(environment.apiCountries);
     return countries
   }
-  saveCountriesName(countries: string, capitals: string) {
-
+  saveCountriesName(count:object[]) {
+    
+    let valuesObject:any[] = [];
+    count.map(country =>{
+      valuesObject.push(country)
+    })
+   
+    var myJsonString = JSON.stringify(valuesObject);
+    
     var myHeaders = new Headers();
-    myHeaders.append("name", countries);
-    myHeaders.append("capital", capitals);
+    myHeaders.append("country", myJsonString);
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
     var urlencoded = new URLSearchParams();
-    urlencoded.append("name", countries);
-    urlencoded.append("capital", capitals);
+    urlencoded.append("country", myJsonString);
 
     var requestOptions: object = {
       method: 'POST',
