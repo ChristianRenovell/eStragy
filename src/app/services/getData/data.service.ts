@@ -17,15 +17,10 @@ export class GetDataService {
     let countries = this.http.get<Countries[]>(environment.apiCountries);
     return countries
   }
+
   saveCountriesName(count: object[]) {
-
-    let valuesObject: any[] = [];
-  
-    count.map(country => {
-      valuesObject.push(country)
-    })
-
-    var myJsonString = JSON.stringify(valuesObject);
+    
+    var myJsonString = JSON.stringify(count);
 
     var myHeaders = new Headers();
     myHeaders.append("country", myJsonString);
