@@ -5,8 +5,9 @@
 export const environment = {
     production: false,
     apiCountries: 'https://restcountries.eu/rest/v2/all?fields=name;capital;flag',
-    apiServerDB: 'http://localhost/2000/savecountris',
-    apiServerDBPHP: 'http://localhost/estragy/savecountris.php',
+    apiServer: 'http://localhost/estragy/savecountris.php',
+    //Backend Node example.
+    //apiServer: 'http://localhost:2000/savecountries'
   };
   
   /*

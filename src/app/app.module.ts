@@ -10,6 +10,10 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { GetDataService } from './services/getData/data.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { GetDataService } from './services/getData/data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot()
   ],
   providers: [GetDataService],
   bootstrap: [

@@ -1,27 +1,47 @@
-# Frontend
+# Frontend 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+cd frontend
+ng serve 
 
-## Development server
+servidor corriendo en http://localhost:4200/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Backend PHP
 
-## Code scaffolding
+Añadir en un servidor el archivo savecountris.php (backendPHP/savecountris.php) modificar la variable de entorno a su servidor en el frontend. (frontend/src/environments/environment.ts)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    apiServer: 'http://localhost/estragy/savecountris.php'
+  
+## Base de datos para PHP
 
-## Build
+CREATE DATABASE `estragy`;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+CREATE TABLE `countriesphp` (
+	`name` VARCHAR(400) DEFAULT '',
+	`capital` VARCHAR,
+	PRIMARY KEY (`name`)
+);
 
-## Running unit tests
+## Backend Node
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Instalar en un servidor el proyecto backend, ejecutar 'npm install', modificar la variable de entorno a su servidor en el frontend (frontend/src/environments/environment.ts)
 
-## Running end-to-end tests
+    apiServer: 'http://localhost:2000/savecountries'
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Base de datos para Node
 
-## Further help
+CREATE DATABASE `estragy`;
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+CREATE TABLE `countries` (
+	`id` INT,
+	`name` VARCHAR(400),
+	`capital` VARCHAR(400),
+	`createdAt` DATETIME,
+	`updatedAt` DATETIME,
+	PRIMARY KEY (`name`)
+);
+
+
+## Funciones extra
+
+Re:plaim: chat en lines para WhatsApp ,Telegram etc...
+ngx-toastr: Servicio para mostrar mensajes rápidos y sencillos al usuario. 
